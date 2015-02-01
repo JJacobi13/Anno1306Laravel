@@ -1,0 +1,24 @@
+.sign-in{
+    margin-top: 50px;
+    height: 350px;
+    background-color: deepskyblue;
+    float: none;
+    opacity: 1;
+}
+
+.login-button{
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+html {
+    background: url(/css/Images/Backgrounds/img_3.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body{
+    background: none;
+}

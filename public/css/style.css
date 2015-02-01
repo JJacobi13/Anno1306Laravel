@@ -1,0 +1,61 @@
+.sm-left-margin{
+    margin-left: 20px;
+}
+
+.no-margin{
+    margin: 0px;
+    padding: 0px;
+}
+.md-padding{
+    padding: 5px;
+}
+
+.md-margin{
+    margin: 5px;
+}
+
+.md-outline{
+    outline: 2px solid black;
+}
+
+.main-container{
+    margin 0 auto;
+    margin-top: 2%;
+    padding: 0px;
+    height: 94%;
+}
+
+.row-md-half{
+    height: 4.16666666666665%;
+    min-height: 30px;
+    margin-bottom: 2px;
+}
+.row-md-1{
+    height: 8.33333333%;
+}
+.row-md-3{
+    height: 25%;
+}
+.row-md-8{
+    height: 66.66666667%;
+}
+.row-md-8-half{
+    height: 70.833333365%;
+}
+
+.row-md-12{
+    height: 100%;
+}
+
+.navbar-nav>li, h1.nav-header{
+    width: 100%;
+    border-bottom: 1px solid dimgray;
+    margin-bottom: 0px;
+}
+.navbar-nav>li a{
+    color: white;
+}
+.navbar-nav>li a:hover{
+    cursor:hand;
+    color: black;
+}
