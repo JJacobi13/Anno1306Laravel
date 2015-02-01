@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/public" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/app/storage" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/components" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/twitter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/way" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/zizaco" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>
+
