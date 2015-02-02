@@ -26,9 +26,9 @@ class BuildingProductionTableSeeder extends Seeder
 
 		BuildingProduction::create([
 			"building"                 => Building::where("appClass", "=", "house")->first()->id,
-			"upkeep"                   => -20,
-			"product"                  => null,
-			"productQuantity"          => 0,
+			"upkeep"                   => 0,
+			"product"                  => "money",
+			"productQuantity"          => 20,
 			"productCondition"         => "fish",
 			"productConditionQuantity" => 1,
 			"productConditionRequired" => true,
