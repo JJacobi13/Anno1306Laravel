@@ -1,86 +1,26 @@
 <?php
 
-class GameController extends \BaseController {
+class GameController extends BaseController{
 
 	/**
-	 * Display a listing of the resource.
-	 * GET /game
-	 *
-	 * @return Response
+	 * @TODO: improve speed by first calculating resources to pay so only a few sql queries have to be executed
+	 * @return array
 	 */
-	public function index()
-	{
-		return View::make('game.mainView');
-	}
+	public function nextTurn(){
+		$user = Auth::user();
+		foreach( $user->buildings as $building ){
+			$user->getResource( 'money' )->pay( $building->production->upkeep );
+			if($building->production->product  != null){
+				$user->getResource( $building->production->product)->receive( $building->production->productQuantity );
+			}
+			if($building->production->productCondition != null){
+				$user->getResource( $building->production->productCondition)->pay( $building->production->productConditionQuantity );
+			}
+		}
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /game/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+		return [ 'status'       => 'success',
+		         'message'      => 'Next turn!',
+		         'newResources' => Auth::user()->getAllResources()
+		];
 	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /game
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
-
-	/**
-	 * Display the specified resource.
-	 * GET /game/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /game/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /game/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /game/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
-
 }

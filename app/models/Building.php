@@ -1,10 +1,14 @@
 <?php
 
-class Building extends \Eloquent{
+class Building extends BaseModel{
 	protected $fillable = [ ];
 
 	public function users(){
 		return $this->belongsToMany( 'User', 'user_buildings' );
+	}
+
+	public function production(){
+		return $this->belongsTo('BuildingProduction','id','building');
 	}
 
 	public function build(){

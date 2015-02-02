@@ -1,6 +1,6 @@
 <?php
 
-class Resource extends \Eloquent {
+class Resource extends BaseModel {
 	protected $fillable = ['name'];
 
 	public function userRecources()

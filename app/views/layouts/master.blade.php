@@ -30,5 +30,7 @@
 			</div>
 
 		</div>
+
+		@include('game._lost')
 	</body>
 </html>

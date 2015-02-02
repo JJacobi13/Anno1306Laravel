@@ -18,6 +18,7 @@ Route::group(['before' => 'auth'], function () {
 	Route::resource('/buildings', 'BuildingsController', ['only' => 'show']);
 	Route::post('/buildings', ['uses' => 'BuildingsController@build']);
 	Route::get('/users/restart', ['uses' => 'UsersController@restart']);
+	Route::post('/game/next-turn', ['uses' => 'GameController@nextTurn']);
 });
 
 //

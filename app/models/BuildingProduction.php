@@ -1,5 +1,5 @@
 <?php
 
-class BuildingProduction extends \Eloquent {
+class BuildingProduction extends BaseModel {
 	protected $fillable = [];
 }

@@ -4,7 +4,7 @@
 use Zizaco\Confide\ConfideUser;
 use Zizaco\Confide\ConfideUserInterface;
 
-class User extends \Eloquent implements ConfideUserInterface{
+class User extends BaseModel implements ConfideUserInterface{
 	use ConfideUser;
 
 	protected $fillable = [
@@ -47,15 +47,27 @@ class User extends \Eloquent implements ConfideUserInterface{
 		return $this->belongsToMany( 'Building', 'user_buildings' );
 	}
 
+	/**
+	 * @todo: move to static function in resources
+	 * @param $resource
+	 * @return UserResource
+	 */
 	public function getResource( $resource ){
-		return UserResource::where( 'user_id', '=', $this->id )
+		$resourceInstance = UserResource::where( 'user_id', '=', $this->id )
 			->where( 'resource_id', '=', \Resource::where( 'name', '=', $resource )->first()->id )
 			->first();
+		if($resourceInstance == null){
+			$resourceInstance = new UserResource();
+			$resourceInstance->quantity = 0;
+			$resourceInstance->resource()->associate(\Resource::where( 'name', '=', $resource )->first());
+			$resourceInstance->user()->associate($this);
+			$resourceInstance->save();
+		}
+		return $resourceInstance;
 	}
-	public function getBuildResources(){
+	public function getAllResources(){
 		return UserResource::join('resources','user_resources.resource_id','=','resources.id')
-			->where( 'user_id', '=', $this->id )
-			->whereIn('name', ['money','tools','wood'] )->get(['name','quantity']);
+			->where( 'user_id', '=', $this->id )->get(['name','quantity']);
 	}
 
 	public function restart(){

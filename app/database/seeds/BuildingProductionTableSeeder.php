@@ -6,7 +6,7 @@ class BuildingProductionTableSeeder extends Seeder
 	public function run()
 	{
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "fishermansHat")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "fishermansHat")->first()->id,
 			"upkeep"                   => 10,
 			"product"                  => "fish",
 			"productQuantity"          => 5,
@@ -15,7 +15,7 @@ class BuildingProductionTableSeeder extends Seeder
 			"productConditionRequired" => false,
 		]);
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "hempPlantation")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "hempPlantation")->first()->id,
 			"upkeep"                   => 10,
 			"product"                  => "wool",
 			"productQuantity"          => 5,
@@ -25,7 +25,7 @@ class BuildingProductionTableSeeder extends Seeder
 		]);
 
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "house")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "house")->first()->id,
 			"upkeep"                   => -20,
 			"product"                  => null,
 			"productQuantity"          => 0,
@@ -35,7 +35,7 @@ class BuildingProductionTableSeeder extends Seeder
 		]);
 
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "warehouse")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "warehouse")->first()->id,
 			"upkeep"                   => 20,
 			"product"                  => null,
 			"productQuantity"          => 5,
@@ -45,7 +45,7 @@ class BuildingProductionTableSeeder extends Seeder
 		]);
 
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "weaversHat")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "weaversHat")->first()->id,
 			"upkeep"                   => 10,
 			"product"                  => "cloth",
 			"productQuantity"          => 5,
@@ -55,7 +55,7 @@ class BuildingProductionTableSeeder extends Seeder
 		]);
 
 		BuildingProduction::create([
-			"building"                 => Building::where("appClass", "=", "woodcutter")->first()->pluck("id"),
+			"building"                 => Building::where("appClass", "=", "woodcutter")->first()->id,
 			"upkeep"                   => 10,
 			"product"                  => "wood",
 			"productQuantity"          => 2,

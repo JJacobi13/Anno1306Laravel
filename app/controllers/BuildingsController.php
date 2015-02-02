@@ -1,6 +1,6 @@
 <?php
 
-class BuildingsController extends \BaseController{
+class BuildingsController extends BaseController{
 
 	/**
 	 * Display a listing of the resource.
@@ -29,7 +29,7 @@ class BuildingsController extends \BaseController{
 			return [ 'status'       => 'success',
 			         'buildingName' => $building->name,
 			         'message'      => 'Building a ' . $building->name . ' was successful.',
-			         'newResources' => Auth::user()->getBuildResources()
+			         'newResources' => Auth::user()->getAllResources()
 			];
 		}
 

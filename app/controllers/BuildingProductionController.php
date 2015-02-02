@@ -1,6 +1,6 @@
 <?php
 
-class BuildingProductionController extends \BaseController {
+class BuildingProductionController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.

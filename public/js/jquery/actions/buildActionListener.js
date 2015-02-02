@@ -1,4 +1,4 @@
-$(document).on('click','.buildButton',function(){
+$(document).on('click','.build-button',function(){
     $.ajax({
         type: 'POST',
         url: '/buildings',
@@ -13,4 +13,10 @@ $(document).on('click','.buildButton',function(){
             logger.addMessage(returnedData.message);
         }
     });
+});
+
+$(function () {
+    $(function () {
+        $('[data-toggle="popover"]').popover()
+    })
 });

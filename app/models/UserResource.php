@@ -1,6 +1,6 @@
 <?php
 
-class UserResource extends \Eloquent{
+class UserResource extends BaseModel{
 	protected $fillable = [ 'quantity' ];
 
 	public static function createStartingResources( $user ){
@@ -25,5 +25,9 @@ class UserResource extends \Eloquent{
 	public function pay($amount){
 		$this->quantity -= $amount;
 		$this->save();
+	}
+
+	public function receive($amount){
+		$this->pay(-$amount);
 	}
 }
