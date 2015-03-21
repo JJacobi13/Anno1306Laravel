@@ -20,7 +20,7 @@ class CreateBuildingProduction extends Migration {
             $table->integer("productQuantity")->nullable();
             $table->string("productCondition")->nullable();
             $table->integer("productConditionQuantity")->nullable();
-            $table->boolean("productConditionRequired")->nullable();
+            $table->boolean("productConditionRequired")->default(false);
 			$table->integer("building");
 			$table->timestamps();
 		});

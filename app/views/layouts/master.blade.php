@@ -1,4 +1,4 @@
-<html>
+<html ng-app>
 	<head>
 		<title>Anno 1306</title>
 		@include('layouts.defaults.cssIncludes')
@@ -16,7 +16,9 @@
 
 			<div class="col-md-10 no-margin row-md-8-half">
 				<div id="mainContent" class="col-md-9 row-md-12">
-					@include('game.builtBuildings')
+					<div id="built-buildings">
+						@include('game.builtBuildings')
+					</div>
 				</div>
 
 				<div class="col-md-3 bg-info row-md-12 md-outline">

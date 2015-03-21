@@ -9,21 +9,23 @@
         "twitter/bootstrap": "dev-master",
         "zizaco/confide": "~4.0@dev",
         "zizaco/entrust": "1.2.*@dev",
-        "mccool/laravel-auto-presenter": "~2.2"
+        "mccool/laravel-auto-presenter": "~2.2",
+        "components/angular.js": "dev-master"
 	},
     "require-dev": {
         "way/generators": "~2.0"
     },
 	"autoload": {
-		"classmap": [
+        "classmap": [
 			"app/commands",
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
 			"app/database/seeds",
-			"app/tests/TestCase.php"
-		]
-	},
+			"app/tests/TestCase.php",
+            "app/Anno"
+        ]
+    },
 	"scripts": {
 		"post-install-cmd": [
 			"php artisan clear-compiled",

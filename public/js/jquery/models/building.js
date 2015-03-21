@@ -5,3 +5,9 @@ buildingList = {
         $(this.selector).append('<li>' + message + '</li>');
     }
 }
+
+buildings = {
+    update: function(buildingsDiv){
+        $('#built-buildings').html(buildingsDiv);
+    }
+}

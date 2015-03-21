@@ -23,11 +23,16 @@ class UserResource extends BaseModel{
 	}
 
 	public function pay($amount){
-		$this->quantity -= $amount;
-		$this->save();
+		if($this->quantity > $amount){
+			$this->quantity -= $amount;
+			$this->save();
+			return true;
+		}
+		return false;
 	}
 
 	public function receive($amount){
-		$this->pay(-$amount);
+		$this->quantity += $amount;
+		$this->save();
 	}
 }

@@ -1,5 +1,7 @@
 <?php
 
+use Anno\Exceptions\LostException;
+
 class GameController extends BaseController{
 
 	/**
@@ -7,20 +9,19 @@ class GameController extends BaseController{
 	 * @return array
 	 */
 	public function nextTurn(){
-		$user = Auth::user();
-		foreach( $user->buildings as $building ){
-			$user->getResource( 'money' )->pay( $building->production->upkeep );
-			if($building->production->product  != null){
-				$user->getResource( $building->production->product)->receive( $building->production->productQuantity );
+		try{
+			$user = Auth::user();
+			foreach( $user->buildings as $building ){
+				$building->production->produce( Auth::user(), $building );
 			}
-			if($building->production->productCondition != null){
-				$user->getResource( $building->production->productCondition)->pay( $building->production->productConditionQuantity );
-			}
+			return [ 'status'       => 'success',
+			         'message'      => 'Next turn!',
+			         'newResources' => Auth::user()->getAllResources(),
+			         'buildingsDiv' => View::make( 'game.builtBuildings' )->render()
+			];
+		}catch( LostException $e ){
+			return [ 'status'       => 'lost'];
 		}
 
-		return [ 'status'       => 'success',
-		         'message'      => 'Next turn!',
-		         'newResources' => Auth::user()->getAllResources()
-		];
 	}
 }

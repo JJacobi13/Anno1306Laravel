@@ -5,7 +5,6 @@
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/public" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/app/storage" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/components" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/swiftmailer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/twitter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/way" />

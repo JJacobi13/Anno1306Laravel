@@ -5,6 +5,7 @@ $(document).on('click','.next-turn-button',function(){
         success: function(returnedData){
             if(returnedData.status == "success") {
                 resources.update(returnedData.newResources);
+                buildings.update(returnedData.buildingsDiv);
             }
             logger.addMessage(returnedData.message);
             if(returnedData.status == "lost") {
